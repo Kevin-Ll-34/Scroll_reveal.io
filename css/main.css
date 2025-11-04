@@ -1,20 +1,24 @@
-/* ------------------------------
-MUSEO DEL LOUVRE - main.css
-Diseño moderno y elegante
------------------------------- */
+
 
 body {
   font-family: 'Roboto', sans-serif;
   color: #333;
   line-height: 1.6;
   background-color: #fff;
+  scroll-behavior: smooth;
+  transition: background-color 0.6s ease, color 0.6s ease;
 }
 
 /* ------------------------------
 NAVBAR
 ------------------------------ */
 .navbar {
-  transition: background 0.4s ease;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
@@ -29,11 +33,12 @@ NAVBAR
   color: #333;
   font-weight: 500;
   margin-left: 15px;
-  transition: color 0.3s;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
 }
 
 .navbar-light .nav-link:hover {
   color: #bfa46f; /* dorado Louvre */
+  text-shadow: 0 0 8px rgba(191, 164, 111, 0.4);
 }
 
 /* ------------------------------
@@ -42,6 +47,28 @@ HEADER
 #header {
   padding-top: 100px;
   background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
+  transition: all 0.6s ease;
+}
+
+.contenido2 {
+  height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(6,12,20,0.78) 0%, rgba(18,30,40,0.60) 50%, rgba(18,30,40,0.60) 100%),
+    radial-gradient(circle at 65% 30%, rgba(255,210,140,0.14) 0%, rgba(255,210,140,0.06) 18%, transparent 45%),
+    url("/img/img2.png") no-repeat center / cover;
+  background-blend-mode: multiply, overlay;
+  color: #f6f6f6;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  transition: background-position 1.2s ease-in-out;
+}
+
+.contenido2:hover {
+  background-position: center 10%;
 }
 
 .header-content-right h1 {
@@ -55,338 +82,239 @@ HEADER
   color: #555;
 }
 
-.header-btn {
-  border-color: #bfa46f;
-  color: #bfa46f;
-  font-weight: 500;
-  transition: all 0.3s ease;
+.custom-input {
+  background-color: transparent;
+  border: 2px solid #0dcaf0;
+  color: rgb(31, 29, 29);
+  border-radius: 12px;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 10px rgba(13, 202, 240, 0.3);
 }
 
-.header-btn:hover {
-  background-color: #bfa46f;
+.custom-input:hover {
+  background-color: #0dcaf0;
   color: #fff;
+  box-shadow: 0 0 15px rgba(13, 202, 240, 0.7);
+  transform: scale(1.05);
 }
 
 /* ------------------------------
-ABOUT SECTION
+GALLERY
 ------------------------------ */
-#about {
-  background-color: #f8f8f8;
-}
 
-#about h2 {
-  font-family: 'Playfair Display', serif;
-  color: #111;
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
 
-#about p {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-#about .btn-dark {
-  background-color: #111;
-  border-color: #111;
-  transition: all 0.3s;
-}
-
-#about .btn-dark:hover {
-  background-color: #bfa46f;
-  border-color: #bfa46f;
-  color: #fff;
-}
 
 /* ------------------------------
-GALLERY SECTION
+CARRUSEL DE OBRAS DESTACADAS
 ------------------------------ */
 #gallery {
-  background-color: #fff;
+  background-color: rgb(226, 209, 187);
+  color: #333;
 }
 
-#gallery h2 {
-  font-family: 'Playfair Display', serif;
-  color: #111;
-  margin-bottom: 40px;
+#gallery .carousel-item {
+  transition: opacity 1s ease-in-out;
 }
 
 #gallery h5 {
   font-family: 'Playfair Display', serif;
-  color: #444;
+  font-size: 1.6rem;
+  color: #3c2a1e;
   margin-top: 15px;
 }
 
-/* Uniform gallery frames: fixed frame size per breakpoint, image shown fully inside (no distortion) */
+#gallery p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #443c37;
+}
+
+.obra-img {
+  border-radius: 12px;
+  height: 450px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.obra-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Oculta controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  display: none;
+}
+
+/* Indicadores opcionales (puedes quitar esta sección si no los usas) */
+.carousel-indicators li {
+  background-color: #3c2a1e;
+}
+
+/* Estilos para la galería en tarjetas (img-frame) y controles del carrusel personalizado */
 .img-frame {
-  height: 360px; /* desktop frame height */
+  height: 260px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  /* fondo transparente para que no se muestre el recuadro blanco detrás de las imágenes */
+  background: transparent;
+  border-radius: 10px;
+  transition: transform 0.6s ease, box-shadow 0.6s ease, filter 0.6s ease;
 }
-.img-frame img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* show full image without cropping */
-  display: block;
-}
-.img-frame:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,0,0,0.12); }
 
-/* Responsive frame sizes */
-@media (max-width: 1024px) { .img-frame { height: 300px; } }
-@media (max-width: 768px)  { .img-frame { height: 220px; } }
+.img-frame img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; background: transparent; }
+
+.carousel-gallery { position: relative; }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 20; /* ensure buttons float above cards */
+}
+.carousel-prev { left: 12px; }
+.carousel-next { right: 12px; }
+.carousel-btn:disabled { opacity: 0.35; cursor: default; }
+
+.gallery-track { min-height: 1px; }
+.gallery-card { display: block; }
+
+
 
 /* ------------------------------
-FOOTER / CONTACT
+SOCIAL ICONS
 ------------------------------ */
-/* ================================
-FOOTER / CONTACT
-================================ */
+.social-icons a {
+  font-size: 48px;
+  color: rgb(237, 233, 233);
+  margin: 0 12px;
+  transition: all 0.5s ease;
+}
+
+.social-icons a:hover {
+  color: #0dcaf0;
+  transform: scale(1.25) rotate(8deg);
+  text-shadow: 0 0 15px rgba(13, 202, 240, 0.8);
+}
+
+/* ------------------------------
+FOOTER
+------------------------------ */
 footer {
   position: relative;
   background:
     linear-gradient(180deg, rgba(6,12,20,0.78) 0%, rgba(18,30,40,0.60) 50%, rgba(18,30,40,0.60) 100%),
-    radial-gradient(circle at 65% 30%, rgba(255,210,140,0.14) 0%, rgba(255,210,140,0.06) 18%, transparent 45%),
-    url("/img/logofinal.png") no-repeat center / cover;
+    radial-gradient(circle at 65% 30%, rgba(255,210,140,0.14) 0%, rgba(255,210,140,0.06) 18%, transparent 45%);
   background-blend-mode: overlay;
   color: #f6f6f6;
   text-align: center;
-  padding: 60px 20px;
+  padding: 30px 20px;
   overflow: hidden;
+  transition: background-color 0.6s ease;
 }
 
 footer h3 {
-    font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
   color: #bfa46f;
   text-transform: uppercase;
   letter-spacing: 2px;
-}
-
-footer .card {
-  border: none;
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  transition: all 0.3s ease;
-}
-
-footer .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
-}
-
-footer input,
-footer textarea {
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background: rgba(255, 255, 255, 0.9);
-  color: #222;
-  transition: all 0.3s ease;
-}
-
-footer input:focus,
-footer textarea:focus {
-  border-color: #bfa46f;
-  box-shadow: 0 0 10px rgba(191, 164, 111, 0.5);
-}
-
-footer button {
-  background-color: #bfa46f;
-  border: none;
-  color: #fff;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-footer button:hover {
-  background-color: #a48d57;
-  transform: scale(1.05);
+  font-size: 1.2rem;
 }
 
 footer small {
   display: inline-block;
-  margin-top: 30px;
+  margin-top: 12px;
   color: #dcdcdc;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  transition: color 0.4s ease;
 }
-.footer .social-icons a {
+
+footer small:hover {
   color: #fff;
-  font-size: 40px;
-  margin: 0 10px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.texto p{
-  font-size: 30px;
-}
-.footer .social-icons a:hover {
-  color: #bfa46f;
-  transform: scale(1.2);
-}
-
-.footer form .btn {
-  background-color: #bfa46f;
-  border: none;
-  transition: background 0.3s ease;
-  font-weight: bold;
-}
-
-.footer form .btn:hover {
-  background-color: #a48d57;
-}
-.descripcion-mapa {
-  color: #ddd;
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 10px auto 25px;
-  line-height: 1.6;
-  font-style: italic;
 }
 
 .mapa-container {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 0 25px rgba(191, 164, 111, 0.3);
-  transition: all 0.4s ease;
+  box-shadow: 0 0 12px rgba(191, 164, 111, 0.22);
+  transition: all 0.6s ease;
   background: rgba(255, 255, 255, 0.05);
-  padding: 5px;
+  padding: 2px;
 }
 
 .mapa-container iframe {
   width: 100%;
-  height: 350px;
+  height: 220px;
   border: none;
-  border-radius: 15px;
-  transition: transform 0.6s ease;
+  border-radius: 12px;
+  transition: transform 0.8s ease;
 }
 
 .mapa-container:hover {
   box-shadow: 0 0 35px rgba(191, 164, 111, 0.6);
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 
 .mapa-container:hover iframe {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
-
-
-footer .card, footer h3 {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
 
 /* ------------------------------
-IMAGES & UTILITIES
+UTILIDADES Y RESPONSIVE
 ------------------------------ */
 .img-fluid {
   border-radius: 10px;
+  transition: transform 0.5s ease;
 }
 
-.shadow {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+.img-fluid:hover {
+  transform: scale(1.03);
 }
 
-/* ------------------------------
-MEDIA QUERIES
------------------------------- */
-@media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 1.2rem;
+.monalisa {
+  height: 350px;
+  width: 400px;
+  transition: transform 0.6s ease;
 }
 
-#header {
-    text-align: center;
+.monalisa:hover {
+  transform: scale(1.08);
 }
 
-.header-content-right h1 {
-    font-size: 2rem;
-}
-
-.header-content-right p {
-    font-size: 1rem;
-}
-
-footer form {
-  margin-top: 20px;
-}
-}
-
-.link-a:hover{
-  text-decoration:underline;
+.link-a:hover {
+  text-decoration: underline;
   color: #111;
-}
-.contenido{
-  padding: 15px;
-  font-size: 20px;
-}
-.contenido2 {
-  height: 100vh;
-  background:
-    linear-gradient(180deg, rgba(6,12,20,0.78) 0%, rgba(18,30,40,0.60) 50%, rgba(18,30,40,0.60) 100%),
-    radial-gradient(circle at 65% 30%, rgba(255,210,140,0.14) 0%, rgba(255,210,140,0.06) 18%, transparent 45%),
-    url("/img/img2.png") no-repeat center / cover;
-  background-blend-mode: multiply, overlay;
-  background-size: cover;
-  background-position: center;
-  color: #f6efe6;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #f6f6f6;
-  text-align: center;
-  padding: 4rem 2rem;
+  transition: all 0.4s ease;
 }
 
-
-@media (max-width: 576px) {
-    .logo {
-        height: 70px;
-    }
-    .logo-bar {
-        padding: 8px 12px;
-    }
-}
-.custom-input {
-  background-color: transparent;
-  border: 2px solid #0dcaf0;
-  color: rgb(31, 29, 29);
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(13, 202, 240, 0.3);
-}
-.social-icons a {
-  font-size: 50px;
-  color: rgb(237, 233, 233);
-  margin: 0 12px;
-  transition: all 0.3s ease;
+@media (max-width: 768px) {
+  .navbar-brand { font-size: 1.2rem; }
+  #header { text-align: center; }
+  .header-content-right h1 { font-size: 2rem; }
+  .header-content-right p { font-size: 1rem; }
 }
 
-.social-icons a:hover {
-  color: #0dcaf0;
-  transform: scale(1.3) rotate(5deg);
-  text-shadow: 0 0 10px rgba(13, 202, 240, 0.8);
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
-.monalisa{
-    height: 350px;
-    width: 400px
-}
-
-

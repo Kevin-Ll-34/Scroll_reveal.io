@@ -11,23 +11,21 @@
   <!-- BOOTSTRAP 4 -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" crossorigin="anonymous">
 
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- SCROLL REVEAL -->
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="css/main.css">
-  <!-- FONT AWESOME -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body>
   <!-- NAVIGATION -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-    <div class="container" >
-
-      <img src="img/img1.png" width="175" height="50" alt="Louvre Logo" class="mr-2">
-      
+    <div class="container">
+      <img src="img/img1.png" width="165" height="35" alt="Louvre Logo" class="mr-2">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -36,7 +34,8 @@
         <div class="navbar-nav ml-auto">
           <a class="nav-item nav-link link-a" href="#header">Inicio</a>
           <a class="nav-item nav-link link-a" href="#gallery">Galería</a>
-          <a class="nav-item nav-link link-a" href="#mapa">Ubicacion</a>
+          <a class="nav-item nav-link link-a" href="#visit">Lugares para Visitar</a>
+          <a class="nav-item nav-link link-a" href="#booking">Reserva</a>
           <a class="nav-item nav-link link-a" href="#contact">Contacto</a>
         </div>
       </div>
@@ -44,175 +43,274 @@
   </nav>
 
   <!-- HEADER -->
-      <header class="" id="header">
-        <div class="contenido2">
-          <div class="row">
-            <div class="col-sm-12 my-4">
-
-                <h2 class="text-center display-3 te.xt-uppercase font-weight-bold mt-4">Museo del Louvre </h2>
-            </div>
-            <div class="col-sm-6">
-                <img src="img/museolouvre.png" alt="Right Mona Lisa" class="img-fluid monalisa">
-            </div>
-            <div class="col-sm-6 text-center">
-                <div class="text-center text-md-left"></div>
-                    <p class="lead mb-3"> El Museo del Louvre en París es el hogar de algunas de las obras de arte más famosas del mundo. Con nuestra audioguía, podrás recorrer sus majestuosas salas y conocer la historia detrás de sus tesoros más valiosos, desde la enigmática Mona Lisa hasta la imponente Victoria de Samotracia. </p>
-                    <form action="index.html">
-                    <button type="submit" class="btn btn-defaul custom-input" id="gallery">
-                        Conoce Mas
-                    </button>
-                </form>
-                <ul class="list-unstyled list-inline mt-4 social-icons">
-                    <li class="list-inline-item">
-                        <a href="">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+  <header id="header">
+    <div class="contenido2">
+      <div class="row align-items-center">
+        <div class="col-sm-12 my-4">
+          <h2 class="text-center display-3 text-uppercase font-weight-bold mt-4">Museo del Louvre</h2>
         </div>
-          </div>
-    </header>
-
-  <!-- ABOUT -->
+        <div class="col-md-6 text-center mb-4">
+          <img src="img/museolouvre.png" alt="Museo del Louvre" class="img-fluid monalisa">
+        </div>
+        <div class="col-md-6 text-center text-md-left">
+          <p class="lead mb-3">
+            El Museo del Louvre en París es el hogar de algunas de las obras de arte más famosas del mundo. 
+            Con nuestra audioguía, podrás recorrer sus majestuosas salas y conocer la historia detrás de sus tesoros más valiosos.
+          </p>
+          <a href="#gallery" class="btn custom-input">Conoce Más</a>
+          <ul class="list-unstyled list-inline mt-4 social-icons">
+            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
 
   <!-- GALLERY -->
+  
   <section id="gallery" class="py-5" style="background-color: rgb(226, 209, 187);">
     <div class="container text-center">
-      <h2 class="mb-5" style="text-decoration: underline; color:chocolate">Las obras mas destacadas de Louvre</h2>
+      <h2 class="mb-4" style="text-decoration: underline; color: chocolate;">Las obras más destacadas del Louvre</h2>
+
+      <!-- Carrusel -->
+      <div class="carousel-gallery position-relative">
+        <div class="gallery-track d-flex justify-content-center flex-wrap">
+          <!-- Tarjetas -->
+          <div class="gallery-card col-md-4 px-3">
+            <div class="img-frame rounded shadow-sm">
+              <img src="img/img3.png" class="img-fluid rounded" alt="La Mona Lisa">
+            </div>
+            <h5 class="mt-3">La Mona Lisa</h5>
+            <p>Obra de Leonardo da Vinci, pintada entre 1503 y 1506 en Florencia.</p>
+          </div>
+
+          <div class="gallery-card col-md-4 px-3">
+            <div class="img-frame rounded shadow-sm">
+              <img src="img/img4.png" class="img-fluid rounded" alt="Venus de Milo">
+            </div>
+            <h5 class="mt-3">Venus de Milo</h5>
+            <p>Escultura de mármol del siglo II a.C. que representa a Afrodita, diosa del amor y la belleza.</p>
+          </div>
+
+          <div class="gallery-card col-md-4 px-3">
+            <div class="img-frame rounded shadow-sm">
+              <img src="img/img6.png" class="img-fluid rounded" alt="Victoria de Samotracia">
+            </div>
+            <h5 class="mt-3">Victoria de Samotracia</h5>
+            <p>Escultura en mármol de 2,75 metros de altura, datada hacia el 190 a. C.</p>
+          </div>
+
+          <div class="gallery-card col-md-4 px-3">
+            <div class="img-frame rounded shadow-sm">
+              <img src="img/img10.png" class="img-fluid rounded" alt="La balsa de la Medusa">
+            </div>
+            <h5 class="mt-3">La balsa de la Medusa</h5>
+            <p>Pintura de Théodore Géricault, símbolo del Romanticismo francés.</p>
+          </div>
+
+          <div class="gallery-card col-md-4 px-3">
+            <div class="img-frame rounded shadow-sm">
+              <img src="img/img11.png" class="img-fluid rounded" alt="La libertad guiando al pueblo">
+            </div>
+            <h5 class="mt-3">La libertad guiando al pueblo</h5>
+            <p>Obra de Eugène Delacroix que conmemora la Revolución de 1830 en Francia.</p>
+          </div>
+
+          <div class="gallery-card col-md-4 px-3">
+            <div class="img-frame rounded shadow-sm">
+              <img src="img/img12.png" class="img-fluid rounded" alt="Psique reanimada por el beso del amor">
+            </div>
+            <h5 class="mt-3">Psique reanimada por el beso del amor</h5>
+            <p>Escultura de Antonio Canova que representa el amor triunfando sobre la muerte.</p>
+          </div>
+        </div>
+
+        <!-- Flechas abajo -->
+        <div class="carousel-controls text-center mt-4">
+          <button class="carousel-btn carousel-prev mx-3" aria-label="Anterior">‹</button>
+          <button class="carousel-btn carousel-next mx-3" aria-label="Siguiente">›</button>
+        </div>
+      </div>
+
+      <small class="d-block mt-3 text-muted">Las imágenes se deslizan automáticamente</small>
+    </div>
+  </section>
+
+
+
+   <!-- PLACES TO VISIT -->
+  <section id="visit" class="bg-white py-5">
+    <div class="container text-center">
+      <h2 class="mb-10">Lugares para Visitar en París</h2>
       <div class="row">
         <div class="col-md-4 mb-4">
-          <div class="img-frame rounded shadow-sm">
-            <img src="img/img3.png" class="img-fluid" alt="La Mona Lisa">
-          </div>
-          <h5 class="mt-3">La Mona Lisa</h5>
-          <p>La historia de la Mona Lisa comienza en Florencia, Italia, cuando Leonardo da Vinci la pintó entre 1503 y 1506 para un mercader de telas llamado Francesco del Giocondo</p>
+          <img src="img/img7.png" class="img-fluid rounded shadow-sm" alt="Torre Eiffel">
+          <h5 class="mt-3">Torre Eiffel</h5>
+          <p>Uno de los monumentos más icónicos del mundo. Ideal para disfrutar de vistas panorámicas de París.</p>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="img-frame rounded shadow-sm">
-            <img src="img/img4.png" class="img-fluid" alt="Venus de Milo">
-          </div>
-          <h5 class="mt-3">Venus de Milo</h5>
-          <p>La Venus de Milo es una antigua estatua de mármol, probablemente esculpida entre el 150 y el 100 a.C. y atribuida a Alejandro de Antioquía, que representa a Afrodita, la diosa griega del amor y la belleza.</p>
+          <img src="img/img8.png" class="img-fluid rounded shadow-sm" alt="Catedral de Notre Dame">
+          <h5 class="mt-3">Catedral de Notre Dame</h5>
+          <p>Un símbolo del arte gótico francés, con una arquitectura impresionante y una rica historia.</p>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="img-frame rounded shadow-sm">
-            <img src="img/img6.png" class="img-fluid" alt="Victoria de Samotracia">
-          </div>
-          <h5 class="mt-3">Victoria de Samotracia</h5>
-          <p>La Victoria de Samotracia es una escultura en mármol de 2,75 metros de altura, datada hacia el 190 a. C, una de las piezas imprescindibles del Museo del Louvre</p>
+          <img src="img/img9.png" class="img-fluid rounded shadow-sm" alt="Campos Elíseos">
+          <h5 class="mt-3">Campos Elíseos</h5>
+          <p>El paseo más famoso de París, rodeado de tiendas, cafés y el Arco del Triunfo al final del camino.</p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Reserva tu Visita</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form class="card p-4 shadow-sm bg-white" action="#" method="post" novalidate>
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input id="name" name="name" type="text" class="form-control" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" class="form-control" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="date">Fecha de la visita</label>
+                <input id="date" name="date" type="date" class="form-control" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="time">Hora de la visita</label>
+                <input id="time" name="time" type="time" class="form-control" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="people">Número de personas</label>
+              <input id="people" name="people" type="number" min="1" max="10" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Reservar Ahora</button>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-<section class="mapa" id="mapa">
-  <div class="text-center">
-    <i class="fas fa-map-marker-alt" style="font-size: 2rem; color: #bfa46f;"></i>
-    <h5 class="mt-2">Ubicación del Museo</h5>
-    <p class="descripcion-mapa">
-      Descubre dónde se encuentra el majestuoso Museo del Louvre. 
-      Un lugar donde el arte y la historia se unen en el corazón de París.
-    </p>
-  </div>
-
-  <div class="container mapa-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999953404073!2d2.3354555156758093!3d48.86061117928753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d8778c0b71%3A0x8c6d2a98f8cb91f9!2sMuseo%20del%20Louvre!5e0!3m2!1ses!2sfr!4v1700228718169!5m2!1ses!2sfr"
-      allowfullscreen="" loading="lazy">
-    </iframe>
-  </div>
-</section>
-
-    
-</section>
-  <!-- CONTACT -->
-<footer id="contact" class="footer text-white pt-5">
-  <div class="container">
-    <h3 class="text-center mb-4">Contáctanos</h3>
-    <div class="row">
-      <!-- Formulario -->
-      <div class="col-md-6 mb-4">
-        <form class="card p-4 bg-light text-dark rounded shadow-lg">
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" placeholder="Nombre" required>
+  <!-- FOOTER -->
+  <footer id="contact" class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col-md-6 text-center text-md-left mb-4 mb-md-0">
+          <h3 class="mb-4">Contáctanos</h3>
+          <p>📍 Rue de Rivoli, 75001 París, Francia</p>
+          <p>📞 +33 1 40 20 50 50</p>
+          <p>🌐 <a href="https://www.louvre.fr" target="_blank" class="text-light text-decoration-underline">www.louvre.fr</a></p>
+          <div class="mt-3">
+            <a href="#" class="text-white mx-2"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-lg"></i></a>
           </div>
-          <div class="form-group mb-3">
-            <input type="email" class="form-control" placeholder="Correo electrónico" required>
-          </div>
-          <div class="form-group mb-3">
-            <textarea class="form-control" rows="3" placeholder="Mensaje"></textarea>
-          </div>
-          <button class="btn btn-dark w-100">Enviar</button>
-        </form>
-      </div>
+        </div>
 
-      <!-- Información de contacto -->
-      <div class="col-md-6 d-flex flex-column justify-content-center align-items-center texto">
-        <p><i class="fab fa-whatsapp text-success"></i> +34 674 324 763</p>
-        <p><i class="fas fa-phone-alt"></i> +1 786 761 7802</p>
-        <p><i class="fas fa-envelope"></i> info@thewalkertours.com</p>
-        <div class="social-icons mt-4">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
+        <!-- MAPA -->
+        <div class="col-md-6">
+          <h5 class="text-center mb-3">Ubicación del Museo</h5>
+          <div class="mapa-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999953404073!2d2.3354555156758093!3d48.86061117928753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671d8778c0b71%3A0x8c6d2a98f8cb91f9!2sMuseo%20del%20Louvre!5e0!3m2!1ses!2sfr!4v1700228718169!5m2!1ses!2sfr"
+              allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="text-center mt-4 border-top pt-3">
-      <small>&copy; 2025 Museo del Louvre | Inspirado por el arte eterno</small>
+      <div class="text-center mt-4">
+        <small>&copy; 2025 Museo del Louvre | Inspirado por el arte eterno</small>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
-  <!-- SCROLL REVEAL ANIMATIONS -->
   <script>
+    // Scroll Reveal animaciones
     window.sr = ScrollReveal();
-
-    sr.reveal('.navbar', { duration: 2000, origin: 'bottom' });
-    sr.reveal('.header-content-left', { duration: 2000, origin: 'left', distance: '200px' });
-    sr.reveal('.header-content-right', { duration: 2000, origin: 'right', distance: '200px' });
-    sr.reveal('.info-right', { duration: 2000, origin: 'bottom', distance: '100px' });
-    sr.reveal('.img-fluid', { duration: 2000, scale: 0.9 });
-    sr.reveal('.card', { duration: 2000, origin: 'bottom', distance: '50px' });
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
+    sr.reveal('.navbar, .img-frame, .gallery-card, footer', {
+      duration: 1700,
+      origin: 'bottom',
+      distance: '80px',
+      easing: 'ease-in-out',
+      reset: false
     });
+
+    // Navbar efecto al hacer scroll
     window.addEventListener("scroll", function() {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) navbar.classList.add("scrolled");
+      else navbar.classList.remove("scrolled");
+    });
+    (function() {
+      const cards = Array.from(document.querySelectorAll('.gallery-card'));
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+      if (!cards.length || !prevBtn || !nextBtn) return;
+
+      let currentPage = 0;
+
+      function getPageSize() {
+        return 3;
+      }
+
+      function render() {
+        const size = getPageSize();
+        const totalPages = Math.max(1, Math.ceil(cards.length / size));
+        if (currentPage > totalPages - 1) currentPage = totalPages - 1;
+
+        cards.forEach((card, i) => {
+          const start = currentPage * size;
+          const end = start + size;
+          card.style.display = (i >= start && i < end) ? 'block' : 'none';
+        });
+
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage >= totalPages - 1;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        currentPage = Math.max(0, currentPage - 1);
+        render();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        const size = getPageSize();
+        const totalPages = Math.max(1, Math.ceil(cards.length / size));
+        currentPage = Math.min(totalPages - 1, currentPage + 1);
+        render();
+      });
+
+      setInterval(() => {
+        const size = getPageSize();
+        const totalPages = Math.max(1, Math.ceil(cards.length / size));
+        currentPage = (currentPage + 1) % totalPages;
+        render();
+      }, 5000);
+
+      window.addEventListener('resize', render);
+      render();
+    })();
   </script>
+
+
 </body>
 </html>

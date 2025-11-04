@@ -55,7 +55,7 @@ HEADER
   background:
     linear-gradient(180deg, rgba(6,12,20,0.78) 0%, rgba(18,30,40,0.60) 50%, rgba(18,30,40,0.60) 100%),
     radial-gradient(circle at 65% 30%, rgba(255,210,140,0.14) 0%, rgba(255,210,140,0.06) 18%, transparent 45%),
-    url("/img/img2.png") no-repeat center / cover;
+    url("/img/img2.png");
   background-blend-mode: multiply, overlay;
   color: #f6f6f6;
   text-align: center;
